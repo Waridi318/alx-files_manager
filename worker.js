@@ -37,7 +37,7 @@ fileQueue.process(async (job, done) => {
   const file = await (await dbClient.filesCollection())
     .findOne({
       _id: new mongoDBCore.BSON.ObjectId(fileId),
-      userId: new mongoDBCore.BSON.ObjectId(userId)
+      userId: new mongoDBCore.BSON.ObjectId(userId),
     });
   if (!file) {
     throw new Error('File not found');
@@ -71,7 +71,7 @@ userQueue.process(async (job, done) => {
       'a simple file management API built with Node.js by ',
       '<a href="https://github.com/B3zaleel">Bezaleel Olakunori</a>. ',
       'We hope it meets your needs.',
-      '</div>'
+      '</div>',
     ].join('');
     Mailer.sendMail(Mailer.buildMessage(user.email, mailSubject, mailContent));
     done();

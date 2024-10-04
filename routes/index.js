@@ -1,4 +1,3 @@
-
 // eslint-disable-next-line no-unused-vars
 import { Express } from 'express';
 import AppController from '../controllers/AppController';
@@ -24,7 +23,7 @@ const injectRoutes = (api) => {
 
   api.route('/files')
     .post(xTokenAuthenticate, FilesController.postUpload)
-  		.get(xTokenAuthenticate, FilesController.getIndex);
+    .get(xTokenAuthenticate, FilesController.getIndex);
 
   api.get('/files/:id', xTokenAuthenticate, FilesController.getShow);
   api.put('/files/:id/publish', xTokenAuthenticate, FilesController.putPublish);

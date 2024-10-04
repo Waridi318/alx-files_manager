@@ -2,7 +2,8 @@ module.exports = {
   env: {
     browser: false,
     es6: true,
-    jest: true
+    jest: false,
+    mocha: true
   },
   extends: [
     'airbnb-base',
@@ -10,7 +11,8 @@ module.exports = {
   ],
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
+    SharedArrayBuffer: 'readonly',
+    request: 'readonly'
   },
   parserOptions: {
     ecmaVersion: 2018,
@@ -26,8 +28,7 @@ module.exports = {
       'error',
       'LabeledStatement',
       'WithStatement'
-    ],
-    'space-before-function-paren': ['error', 'never'] // Enforce no space before function parentheses
+    ]
   },
   overrides: [
     {
